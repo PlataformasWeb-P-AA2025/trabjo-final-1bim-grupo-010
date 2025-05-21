@@ -76,3 +76,16 @@ class Reaccion
 ## En caso de usar IA-Generativa para consulta de información
 
 - En un archivo llamado informacion.md; explicando a detalle el uso de cada prompt
+---
+
+
+## Lo que hemos hecho:
+
+- Creamos el archivo de configuracion junto al nombre de la db (configuracion.py)
+- Creamos el archivo para generar las tablas en sqlite (genera_tablas.py)
+- Creamos el archivo para leer los csv para ingresar la data a la db (csv_cargaDatos.py)
+- Estamos empezando las cosultas 
+
+
+
+

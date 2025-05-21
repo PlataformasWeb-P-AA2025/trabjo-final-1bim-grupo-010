@@ -27,7 +27,7 @@ with open('DATA/usuarios_publicaciones.csv', encoding='UTF-8') as archivo:
             publicacion = Publicacion(usuario_id=usuario.id, publicacion=fila['publicacion'])
             session.add(publicacion)
 
-session.commit()  # Confirmamos para tener IDs de publicaciones asignados
+session.commit()  # Confirmamos para tener ids de publicaciones asignados
 
 # Cargar reacciones
 with open('DATA/usuario_publicacion_emocion.csv', encoding='UTF-8') as archivo:
