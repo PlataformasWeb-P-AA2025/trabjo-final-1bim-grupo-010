@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import and_ 
 from genera_tablas import *
 from configuracion import cadena_base_datos
 engine = create_engine(cadena_base_datos)
@@ -21,4 +20,4 @@ emociones_vistas = set() #se crea un conjunto set vacio
 for r in reacciones: #se recorre el objeto reacciones
     if r.emocion not in emociones_vistas: #se pregunta si la emocion ya paso y si no esta en el conjunto es porque todavia no se ha mostrado
         print(f"{r.publicacion.publicacion} + {r.emocion}")
-        emociones_vistas.add(r.emocion) # se aniade la emocion en el conjunto para que no se vuelva a repetir en la siguiente iteracion
+        emociones_vistas.add(r.emocion) # se añade la emocion en el conjunto para que no se vuelva a repetir en la siguiente iteracion

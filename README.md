@@ -84,7 +84,8 @@ class Reaccion
 - Creamos el archivo de configuracion junto al nombre de la db (configuracion.py)
 - Creamos el archivo para generar las tablas en sqlite (genera_tablas.py)
 - Creamos el archivo para leer los csv para ingresar la data a la db (csv_cargaDatos.py)
-- Estamos empezando las cosultas 
+- Realizamos las 5 consultas que se nos planteo.
+- Realizamos 5 consultas adicionales. 
 
 
 

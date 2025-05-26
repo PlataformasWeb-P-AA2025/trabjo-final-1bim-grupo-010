@@ -1,6 +1,5 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import and_ 
 from genera_tablas import *
 from configuracion import cadena_base_datos
 engine = create_engine(cadena_base_datos)
@@ -9,10 +8,19 @@ engine = create_engine(cadena_base_datos)
 Session = sessionmaker(bind=engine)
 session = Session()
 
+# Mostrar en qué publicaciones reaccionó un usuario.
+# Función para obtener las publicaciones en las que reaccionó un usuario específico.
+def obtener_publicaciones_reaccionadas(nombre_usuario):
+    # Buscar el usuario en la base de datos por su nombre
+    usuario = session.query(Usuario).filter_by(usuario=nombre_usuario).first()
+    
+    if usuario:
+        # Recorrer todas las reacciones del usuario y mostrar la publicación y la emoción asociada
+        for reaccion in usuario.reacciones:
+            print(f"{reaccion.publicacion.publicacion} + {reaccion.emocion}")
+    else:
+        print("Usuario no encontrado.")  # Mensaje en caso de que el usuario no exista
 
-#Listar publicaciones de un usuario.
+# Uso de la función con un usuario específico
+obtener_publicaciones_reaccionadas("Robert")
 
-publicacion = session.query(Publicacion).join(Usuario).filter(Usuario.usuario.like("%Karen%")).all()  #usamos join para unir publicaciones con usuario y filtramos para especificar que usuario mostrar
-
-for l in publicacion:
-    print(f"{l.autor.usuario} -> {l.publicacion}") #recorremos para listar todas las publicaciones en las que Karen ha reaccionado
