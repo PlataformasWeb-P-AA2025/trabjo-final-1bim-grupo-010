@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import Column, Integer, String, ForeignKey
 
 # se importa información del archivo configuracion
-from configuracion_possgress import cadena_base_datos
+from configuracion_postgres import cadena_base_datos
 
 # se genera en enlace al gestor de base de
 # datos

@@ -2,7 +2,7 @@ import csv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from genera_tablas import Usuario, Publicacion, Reaccion
-from configuracion_possgress import cadena_base_datos
+from configuracion_postgres import cadena_base_datos
 
 # Conexión y sesión
 engine = create_engine(cadena_base_datos)
